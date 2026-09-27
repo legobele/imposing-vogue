@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" data-iv-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imposing Vogue — design system demo</title>
+<meta name="description" content="Imposing Vogue design system: tokens and components demo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,900&family=Pinyon+Script&family=EB+Garamond:ital,wght@1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+<style>
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-sans); }
+  .demo-wrap { width: min(100% - 2 * var(--gutter), var(--content-max)); margin-inline: auto; }
+  .demo-swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; }
+  .demo-swatch { border: 1px solid var(--line); border-radius: var(--radius-card); overflow: hidden; }
+  .demo-swatch i { display: block; height: 72px; }
+  .demo-swatch span { display: block; padding: .6rem .8rem; font-family: var(--font-mono); font-size: .72rem; color: var(--text-dim); }
+  .demo-swatch b { display: block; color: var(--text); font-size: .8rem; }
+  .demo-type-row { border-bottom: 1px solid var(--line); padding: 1.5rem 0; }
+  .demo-label { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .08em; color: var(--text-faint); text-transform: uppercase; margin-bottom: .75rem; display: block; }
+  .demo-btns { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+  .demo-note { font-family: var(--font-serif); font-style: italic; color: var(--text-dim); }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="iv-hero">
+  <div class="iv-hero-media" style="background-image: linear-gradient(135deg, #1a1c1e, #111214), url('https://picsum.photos/seed/vogue/1600/900'); background-blend-mode: overlay;" aria-hidden="true"></div>
+  <span class="iv-hero-index">01</span>
+  <div class="iv-hero-content">
+    <p class="iv-kicker">the design system</p>
+    <span class="iv-script" aria-hidden="true">imposing, darling</span>
+    <h1 class="iv-display-1">Imposing<br>Vogue</h1>
+    <p class="iv-lede iv-cinematic" style="color:#e8e8e8">One unified system fusing church-slide drama, Vogue high fashion, and Oakley sport-luxe. Tokens, components, and rules — ready for every future project.</p>
+    <div class="iv-hero-actions">
+      <a class="iv-btn iv-btn-energy" href="#tokens">see the tokens</a>
+      <a class="iv-btn iv-btn-ghost-light" href="#components">components ↓</a>
+    </div>
+  </div>
+  <div class="iv-emblem" aria-hidden="true">iv.</div>
+</header>
+
+<main class="iv-sections">
+
+  <!-- TOKENS -->
+  <section class="iv-section iv-pad" id="tokens">
+    <div class="demo-wrap">
+      <div class="iv-section-head">
+        <p class="iv-kicker">color</p>
+        <h2 class="iv-display-2">the palette</h2>
+        <p class="iv-lede">Monochrome discipline, <span class="iv-serif-accent">two energy accents,</span> used with restraint.</p>
+      </div>
+      <div class="demo-swatches">
+        <div class="demo-swatch"><i style="background:#111214"></i><span><b>--ink</b>#111214</span></div>
+        <div class="demo-swatch"><i style="background:#222222"></i><span><b>--ink-2</b>#222222</span></div>
+        <div class="demo-swatch"><i style="background:#ffffff"></i><span><b>--paper</b>#ffffff</span></div>
+        <div class="demo-swatch"><i style="background:#f6f6f6"></i><span><b>--bone</b>#f6f6f6</span></div>
+        <div class="demo-swatch"><i style="background:#eeeeee"></i><span><b>--smoke</b>#eeeeee</span></div>
+        <div class="demo-swatch"><i style="background:#3d3d3d"></i><span><b>--muted</b>#3d3d3d</span></div>
+        <div class="demo-swatch"><i style="background:#d7e14b"></i><span><b>--chartreuse</b>#d7e14b · primary energy</span></div>
+        <div class="demo-swatch"><i style="background:#c83430"></i><span><b>--signal</b>#c83430 · rationed</span></div>
+        <div class="demo-swatch"><i style="background:#0e70ee"></i><span><b>--cobalt</b>#0e70ee · links</span></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="iv-rule">
+
+  <!-- TYPE -->
+  <section class="iv-section iv-pad">
+    <div class="demo-wrap">
+      <div class="iv-section-head">
+        <p class="iv-kicker">typography</p>
+        <h2 class="iv-display-2">the voices</h2>
+      </div>
+      <div class="demo-type-row">
+        <span class="demo-label">display · Bodoni Moda 900 · always uppercase</span>
+        <p class="iv-display-2">Imposing Vogue</p>
+      </div>
+      <div class="demo-type-row">
+        <span class="demo-label">script · Pinyon Script · layered over display</span>
+        <span class="iv-script">script, darling</span>
+        <p class="iv-display-3">Over the headline</p>
+      </div>
+      <div class="demo-type-row">
+        <span class="demo-label">serif accent · EB Garamond italic</span>
+        <p style="font-size:1.2rem">Body copy with <span class="iv-serif-accent">a whispered aside</span> in italic serif.</p>
+      </div>
+      <div class="demo-type-row">
+        <span class="demo-label">kicker · Inter 600 · uppercase · 0.22em tracking</span>
+        <p class="iv-kicker" style="margin:0">The luxury signal</p>
+      </div>
+      <div class="demo-type-row">
+        <span class="demo-label">mono · JetBrains Mono · tags &amp; meta</span>
+        <p style="font-family:var(--font-mono);font-size:.85rem;color:var(--text-dim)">TAG / META / 001</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="iv-rule">
+
+  <!-- COMPONENTS -->
+  <section class="iv-section iv-pad" id="components">
+    <div class="demo-wrap">
+      <div class="iv-section-head">
+        <p class="iv-kicker">components</p>
+        <h2 class="iv-display-2">the wardrobe</h2>
+        <p class="iv-lede">Pill CTAs, glass badges, numbered editorial cards. <span class="demo-note">Sections number themselves — no hands.</span></p>
+      </div>
+
+      <span class="demo-label">buttons</span>
+      <div class="demo-btns" style="margin-bottom:3rem">
+        <a class="iv-btn iv-btn-solid" href="#components">solid</a>
+        <a class="iv-btn iv-btn-energy" href="#components">energy</a>
+        <a class="iv-btn iv-btn-ghost" href="#components">ghost</a>
+        <a class="iv-btn iv-btn-ghost-light" href="#components">ghost · light</a>
+      </div>
+
+      <span class="demo-label">tags</span>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:3rem">
+        <span class="iv-tag">default</span>
+        <span class="iv-tag iv-tag--energy">energy</span>
+        <span class="iv-tag iv-tag--signal">signal</span>
+      </div>
+
+      <span class="demo-label">editorial cards (auto-numbered)</span>
+      <div class="iv-card-grid" style="margin-top:1rem">
+        <article class="iv-card">
+          <span class="iv-card-index"></span>
+          <h3 class="iv-card-title"><a href="#components">First Project</a></h3>
+          <p class="iv-card-desc">Sharp corners, chartreuse spine, Bodoni title. The card does not ask for attention — it assumes it.</p>
+          <div class="iv-card-meta"><span class="iv-tag">JS</span><span class="iv-tag iv-tag--energy">AI</span></div>
+          <div class="iv-card-links"><a href="#components">code →</a><a href="#components">live →</a></div>
+        </article>
+        <article class="iv-card">
+          <span class="iv-card-index"></span>
+          <h3 class="iv-card-title"><a href="#components">Second Project</a></h3>
+          <p class="iv-card-desc">Numbering is automatic via CSS counters. Add a card, the system counts it.</p>
+          <div class="iv-card-meta"><span class="iv-tag">CSS</span><span class="iv-tag iv-tag--signal">hot</span></div>
+          <div class="iv-card-links"><a href="#components">code →</a></div>
+        </article>
+      </div>
+
+      <span class="demo-label" style="margin-top:3rem">glass utility</span>
+      <div class="iv-glass" style="border-radius:8px;padding:1.5rem;max-width:420px">
+        <p class="iv-kicker" style="margin-bottom:.5rem">glassmorphism</p>
+        <p style="margin:0;color:var(--text)">Backdrop blur, hairline border. Oakley approved.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="iv-footer">
+  <div class="iv-footer-inner">
+    <p class="iv-footer-brand">imposing <em>vogue</em></p>
+    <p class="iv-footer-meta">tokens.css · components.css · one system, every project</p>
+  </div>
+</footer>
+
+</body>
+</html>

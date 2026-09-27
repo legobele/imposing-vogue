@@ -1,0 +1,104 @@
+/* ==========================================================================
+   IMPOSING VOGUE — design tokens
+   A unified editorial design system fusing three inspirations:
+     1. church slide drama  — photo-forward hero, script layered over giant
+        condensed serif caps, chartreuse on imagery, numbered slides
+     2. Vogue high fashion  — imposing serif display type, generous
+        whitespace, monochrome discipline, editorial numbering
+     3. Oakley sport-luxe   — dark cinematic surfaces, restrained energy
+        accents, pill CTAs, glassmorphism, luxury letter-spacing
+   ========================================================================== */
+
+:root {
+  /* ---- color: the monochrome core (church site discipline) ---- */
+  --ink:        #111214;  /* primary text / darkest surface        */
+  --ink-2:      #222222;  /* Oakley primary dark                   */
+  --paper:      #ffffff;  /* primary light surface                 */
+  --bone:       #f6f6f6;  /* Oakley light surface                  */
+  --smoke:      #eeeeee;  /* hairlines on light                    */
+  --muted:      #3d3d3d;  /* Oakley secondary                      */
+  --faint:      #999999;  /* quiet meta text                       */
+
+  /* ---- color: the energy accents (use with restraint) ---- */
+  --chartreuse: #d7e14b;  /* PRIMARY energy accent — the slide's
+                             lime-yellow. headlines on imagery,
+                             kickers, key CTAs. never body text.   */
+  --signal:     #c83430;  /* SECONDARY accent — Oakley energy red.
+                             sparing use only: warnings, one hero
+                             detail max, tiny badges.              */
+  --cobalt:     #0e70ee;  /* Oakley blue — links on dark, info.    */
+
+  /* ---- color: surfaces ---- */
+  --bg:         var(--ink);
+  --bg-alt:     var(--ink-2);
+  --bg-paper:   var(--paper);
+  --surface:    #1a1c1e;
+  --surface-2:  #232527;
+  --line:       rgba(255, 255, 255, 0.10);
+  --line-strong:rgba(255, 255, 255, 0.22);
+  --line-on-light:  rgba(17, 18, 20, 0.12);
+  --text:       #f4f4f2;
+  --text-dim:   #b9bcbd;
+  --text-faint: #7d8184;
+  --text-on-light: var(--ink);
+
+  /* ---- type: Google Fonts only ---- */
+  --font-display: "Bodoni Moda", "Didot", "Bodoni MT", serif;
+  --font-script:  "Pinyon Script", "Snell Roundhand", cursive;
+  --font-serif:   "EB Garamond", Georgia, serif;
+  --font-sans:    "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
+
+  /* ---- type: scale & rhythm ---- */
+  --ls-luxe:     0.22em;   /* the Oakley luxury signal: kickers/labels */
+  --ls-wide:     0.12em;
+  --ls-tight:   -0.02em;
+
+  --headline-1: clamp(3.5rem, 11vw, 9rem);   /* hero: imposing */
+  --headline-2: clamp(2.25rem, 5.5vw, 4rem);/* section titles */
+  --headline-3: clamp(1.4rem, 2.6vw, 1.9rem);/* card titles   */
+
+  /* ---- shape ---- */
+  --radius-pill: 100px;   /* Oakley CTA                    */
+  --radius-card: 4px;     /* editorial cards stay sharp    */
+  --radius-chip: 999px;
+
+  /* ---- depth ---- */
+  --shadow-lift: 0 18px 50px rgba(0, 0, 0, 0.45);
+  --shadow-card: 0 8px 28px rgba(0, 0, 0, 0.35);
+
+  /* cinematic over-image type: heavy multi-layer text-shadow (Oakley) */
+  --shadow-cinematic:
+    0 1px 0 rgba(0,0,0,.55),
+    0 2px 12px rgba(0,0,0,.55),
+    0 8px 40px rgba(0,0,0,.65);
+
+  /* ---- motion ---- */
+  --speed-fast: 140ms;
+  --speed-med:  260ms;
+  --speed-slow: 520ms;
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* ---- layout ---- */
+  --content-max: 1200px;
+  --gutter: clamp(20px, 4vw, 48px);
+}
+
+/* Light editorial inversion (Vogue paper mode). Components that must stay
+   dark on light pages can scope themselves with .iv-dark. */
+[data-iv-theme="light"] {
+  --bg:      var(--paper);
+  --bg-alt:  var(--bone);
+  --surface: var(--paper);
+  --surface-2: var(--bone);
+  --line:    var(--line-on-light);
+  --line-strong: rgba(17, 18, 20, 0.28);
+  --text:    var(--text-on-light);
+  --text-dim:  #4a4d4f;
+  --text-faint: #8a8d8f;
+  --shadow-lift: 0 18px 50px rgba(17, 18, 20, 0.14);
+  --shadow-card: 0 8px 28px rgba(17, 18, 20, 0.10);
+  --shadow-cinematic:
+    0 1px 0 rgba(255,255,255,.6),
+    0 2px 14px rgba(255,255,255,.5);
+}

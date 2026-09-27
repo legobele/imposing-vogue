@@ -1,0 +1,397 @@
+/* ==========================================================================
+   IMPOSING VOGUE — components
+   Requires tokens.css. All classes are .iv- prefixed. Pair with the
+   Google Fonts import (see README):
+     Bodoni Moda 900 · Pinyon Script 400 · EB Garamond ital 400;500 ·
+     Inter 400;500;600;700
+   ========================================================================== */
+
+/* ============ type lockups ============ */
+
+/* kicker: the Oakley luxury signal — uppercase, tracked out, chartreuse */
+.iv-kicker {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-luxe);
+  color: var(--chartreuse);
+  margin: 0 0 1rem;
+}
+.iv-kicker--on-light { color: var(--ink); }
+
+/* the imposing headline: Bodoni Moda 900, uppercase, tight */
+.iv-display-1,
+.iv-display-2,
+.iv-display-3 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-tight);
+  line-height: 0.95;
+  margin: 0;
+  text-wrap: balance;
+}
+.iv-display-1 { font-size: var(--headline-1); }
+.iv-display-2 { font-size: var(--headline-2); }
+.iv-display-3 { font-size: var(--headline-3); }
+
+/* script accent: layered OVER the display, church-slide style.
+   usage: position it overlapping the top of an .iv-display-* line. */
+.iv-script {
+  font-family: var(--font-script);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--chartreuse);
+  font-size: clamp(1.8rem, 4.5vw, 3.4rem);
+  line-height: 1;
+  display: block;
+  margin-bottom: -0.35em;      /* pull the display up underneath */
+  position: relative;
+  z-index: 1;
+  transform: rotate(-4deg);
+  transform-origin: left center;
+}
+
+/* serif italic accent inside sans body copy */
+.iv-serif-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* lede paragraph under a section title */
+.iv-lede {
+  font-family: var(--font-sans);
+  color: var(--text-dim);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 58ch;
+  margin: 1rem 0 0;
+}
+
+/* ============ buttons: pill CTAs (Oakley) ============ */
+
+.iv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  padding: 0.95em 2.1em;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform var(--speed-fast) var(--ease-out),
+              background var(--speed-fast) ease,
+              border-color var(--speed-fast) ease,
+              box-shadow var(--speed-fast) ease;
+  white-space: nowrap;
+}
+.iv-btn:hover { transform: translateY(-2px); }
+.iv-btn:active { transform: translateY(0); }
+
+/* solid ink button for light surfaces (church site discipline) */
+.iv-btn-solid {
+  background: var(--ink);
+  color: var(--paper);
+}
+.iv-btn-solid:hover { background: var(--ink-2); color: var(--paper); }
+
+/* energy button: chartreuse, for the ONE action that matters */
+.iv-btn-energy {
+  background: var(--chartreuse);
+  color: var(--ink);
+  box-shadow: 0 10px 30px rgba(215, 225, 75, 0.25);
+}
+.iv-btn-energy:hover { box-shadow: 0 14px 36px rgba(215, 225, 75, 0.35); color: var(--ink); }
+
+/* ghost: 1px outline pill (church site CTA, Oakley restraint) */
+.iv-btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--line-strong);
+}
+.iv-btn-ghost:hover { border-color: var(--chartreuse); color: var(--chartreuse); }
+
+/* ghost over imagery: white outline, cinematic shadow */
+.iv-btn-ghost-light {
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.55);
+  text-shadow: var(--shadow-cinematic);
+}
+.iv-btn-ghost-light:hover { border-color: var(--chartreuse); color: var(--chartreuse); }
+
+/* ============ hero: full-bleed photo, script over giant serif ============ */
+
+.iv-hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: var(--ink);
+  isolation: isolate;
+}
+
+/* the photograph. swap the background-image for your own art. */
+.iv-hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+}
+.iv-hero-media::after {
+  /* cinematic grade: vignette + ink wash so type always reads */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 90% at 50% 10%, transparent 40%, rgba(0,0,0,.55) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.25) 0%, transparent 35%, rgba(0,0,0,.78) 100%);
+}
+
+.iv-hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 2 * var(--gutter), var(--content-max));
+  margin-inline: auto;
+  padding: clamp(4rem, 10vh, 7rem) 0;
+  color: #fff;
+}
+.iv-hero-content .iv-display-1 {
+  color: #fff;
+  text-shadow: var(--shadow-cinematic);
+}
+.iv-hero-content .iv-kicker { text-shadow: var(--shadow-cinematic); }
+
+.iv-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* slide number, top-right — the "01" from the announcement slide */
+.iv-hero-index {
+  position: absolute;
+  z-index: 1;
+  top: var(--gutter);
+  right: var(--gutter);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: var(--ls-wide);
+  color: rgba(255,255,255,.85);
+  text-shadow: var(--shadow-cinematic);
+}
+
+/* circular badge mark, bottom-right of the hero */
+.iv-emblem {
+  position: absolute;
+  z-index: 1;
+  right: var(--gutter);
+  bottom: var(--gutter);
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.5rem;
+  letter-spacing: var(--ls-tight);
+  text-shadow: var(--shadow-cinematic);
+}
+
+/* ============ editorial project cards ============ */
+
+.iv-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  counter-reset: iv-card;
+}
+
+.iv-card {
+  counter-increment: iv-card;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 1.75rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  border-top: 3px solid var(--chartreuse);
+  transition: transform var(--speed-med) var(--ease-out),
+              border-color var(--speed-med) ease,
+              box-shadow var(--speed-med) ease;
+}
+.iv-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+  border-color: var(--line-strong);
+}
+
+.iv-card-index::before {
+  content: "0" counter(iv-card);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: var(--ls-luxe);
+  color: var(--text-faint);
+}
+
+.iv-card-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-tight);
+  font-size: var(--headline-3);
+  line-height: 1.05;
+  margin: 0;
+}
+.iv-card-title a { color: inherit; text-decoration: none; }
+.iv-card-title a:hover { color: var(--chartreuse); }
+
+.iv-card-desc {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.iv-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+/* tags / chips: mono, pill, hairline */
+.iv-tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.35em 0.9em;
+  border-radius: var(--radius-chip);
+  border: 1px solid var(--line-strong);
+  color: var(--text-dim);
+  background: transparent;
+}
+.iv-tag--energy { border-color: var(--chartreuse); color: var(--chartreuse); }
+.iv-tag--signal { border-color: var(--signal); color: var(--signal); }
+
+.iv-card-links { display: flex; gap: 1.25rem; }
+.iv-card-links a {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  text-decoration: none;
+}
+.iv-card-links a:hover { color: var(--chartreuse); }
+
+/* ============ section heads: kicker → headline, numbered ============ */
+
+.iv-sections { counter-reset: iv-section; }
+
+.iv-section { counter-increment: iv-section; }
+
+.iv-section-head { margin-bottom: 2.5rem; }
+
+.iv-section-head .iv-display-2::before {
+  content: "0" counter(iv-section);
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: var(--ls-luxe);
+  color: var(--chartreuse);
+  margin-bottom: 1rem;
+}
+
+/* ============ footer: dark, disciplined ============ */
+
+.iv-footer {
+  background: #000;
+  color: var(--text-dim);
+  border-top: 1px solid var(--line);
+  padding: 3.5rem 0 2.5rem;
+  text-align: center;
+}
+.iv-footer-inner {
+  width: min(100% - 2 * var(--gutter), var(--content-max));
+  margin-inline: auto;
+  display: grid;
+  gap: 0.75rem;
+}
+.iv-footer-brand {
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-tight);
+  font-size: 1.6rem;
+  color: #fff;
+}
+.iv-footer-brand em { color: var(--chartreuse); font-style: normal; }
+.iv-footer-meta {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--text-faint);
+}
+
+/* ============ utilities ============ */
+
+/* glassmorphism surface (Oakley) */
+.iv-glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* cinematic type over imagery */
+.iv-cinematic {
+  color: #fff;
+  text-shadow: var(--shadow-cinematic);
+}
+
+/* hairline rule */
+.iv-rule {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 0;
+}
+
+/* generous editorial section spacing (church site whitespace) */
+.iv-pad { padding-block: clamp(4.5rem, 10vw, 8rem); }
+
+/* signal-red: sparing. one detail per viewport, max. */
+.iv-signal { color: var(--signal); }
+
+/* reduced motion: kill the decorative flourishes */
+@media (prefers-reduced-motion: reduce) {
+  .iv-emblem { animation: none; }
+}
