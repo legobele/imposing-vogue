@@ -9,7 +9,7 @@ Three inspirations, one system:
 | # | Source | What it contributed |
 |---|--------|---------------------|
 | 1 | **Church announcement slide** ("ELIGIÉNDONOS" graphic) | Photo-forward hero · handwritten script layered *over* massive condensed serif caps · chartreuse/lime-yellow on imagery · small-cap sans details · circular badge mark · slide number "01" |
-| 2 | **Vogue high fashion** | Imposing serif display type (Bodoni Moda 900, uppercase) · monochrome discipline · generous whitespace · editorial section numbering |
+| 2 | **Vogue high fashion** | Imposing condensed display type (Oswald 600, uppercase) · monochrome discipline · generous whitespace · editorial section numbering |
 | 3 | **Oakley sport-luxe** (oakley.com) | Dark cinematic surfaces · energy accents used with restraint · pill CTAs (100px radius, uppercase, tracked) · glassmorphism · heavy multi-layer text-shadows keeping over-image type cinematic · global letter-spacing as a luxury signal |
 
 ## Files
@@ -25,7 +25,7 @@ index.html      — live demo showcasing every token and component
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,900&family=Pinyon+Script&family=EB+Garamond:ital,wght@1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Pinyon+Script&family=EB+Garamond:ital,wght@1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/legobele/imposing-vogue@main/tokens.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/legobele/imposing-vogue@main/components.css">
@@ -54,7 +54,7 @@ Or vendor the two CSS files into your project (recommended for offline-first sit
 
 | Token | Font | Used for |
 |-------|------|----------|
-| `--font-display` | Bodoni Moda 900 | Imposing headlines, always uppercase |
+| `--font-display` | Oswald 600 | Imposing headlines, always uppercase |
 | `--font-script` | Pinyon Script | Script accent layered over display |
 | `--font-serif` | EB Garamond italic | Serif italic accents in body copy |
 | `--font-sans` | Inter | Kickers, labels, body |
@@ -73,7 +73,7 @@ Luxury signals: `--ls-luxe: 0.22em` on kickers/labels, `--ls-tight: -0.02em` on 
 | Class | What |
 |-------|------|
 | `.iv-kicker` | Tracked-out uppercase kicker, chartreuse |
-| `.iv-display-1/2/3` | Imposing Bodoni headlines (hero / section / card) |
+| `.iv-display-1/2/3` | Imposing Oswald headlines (hero / section / card) |
 | `.iv-script` | Script accent, pulled up to overlap the display line |
 | `.iv-serif-accent` | Italic serif accent inside copy |
 | `.iv-lede` | Section lede paragraph |
@@ -90,7 +90,7 @@ Luxury signals: `--ls-luxe: 0.22em` on kickers/labels, `--ls-tight: -0.02em` on 
 
 1. **Chartreuse is energy, not decoration.** One hero moment, kickers, one CTA. If everything glows, nothing does.
 2. **Signal red is rationed.** One detail per viewport, maximum.
-3. **Display type is always uppercase Bodoni 900.** Script is always Pinyon, always overlapping.
+3. **Display type is always uppercase Oswald 600.** Script is always Pinyon, always overlapping.
 4. **Type over imagery is always cinematic** — never flat white on a photo.
 5. **Light mode exists** (`data-iv-theme="light"`) but dark is the home turf.
 

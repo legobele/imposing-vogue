@@ -43,7 +43,7 @@
   --text-on-light: var(--ink);
 
   /* ---- type: Google Fonts only ---- */
-  --font-display: "Bodoni Moda", "Didot", "Bodoni MT", serif;
+  --font-display: "Oswald", "Arial Narrow", "Helvetica Neue", sans-serif;
   --font-script:  "Pinyon Script", "Snell Roundhand", cursive;
   --font-serif:   "EB Garamond", Georgia, serif;
   --font-sans:    "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;

@@ -2,7 +2,7 @@
    IMPOSING VOGUE — components
    Requires tokens.css. All classes are .iv- prefixed. Pair with the
    Google Fonts import (see README):
-     Bodoni Moda 900 · Pinyon Script 400 · EB Garamond ital 400;500 ·
+     Oswald 600 · Pinyon Script 400 · EB Garamond ital 400;500 ·
      Inter 400;500;600;700
    ========================================================================== */
 
@@ -20,12 +20,12 @@
 }
 .iv-kicker--on-light { color: var(--ink); }
 
-/* the imposing headline: Bodoni Moda 900, uppercase, tight */
+/* the imposing headline: Oswald 600, uppercase, tight */
 .iv-display-1,
 .iv-display-2,
 .iv-display-3 {
   font-family: var(--font-display);
-  font-weight: 900;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: var(--ls-tight);
   line-height: 0.95;
@@ -213,7 +213,7 @@
   -webkit-backdrop-filter: blur(10px);
   color: #fff;
   font-family: var(--font-display);
-  font-weight: 900;
+  font-weight: 600;
   font-size: 1.5rem;
   letter-spacing: var(--ls-tight);
   text-shadow: var(--shadow-cinematic);
@@ -260,7 +260,7 @@
 
 .iv-card-title {
   font-family: var(--font-display);
-  font-weight: 900;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: var(--ls-tight);
   font-size: var(--headline-3);
@@ -348,7 +348,7 @@
 }
 .iv-footer-brand {
   font-family: var(--font-display);
-  font-weight: 900;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: var(--ls-tight);
   font-size: 1.6rem;
